@@ -1,0 +1,23 @@
+@import "../../../styles/main";
+
+.h1 {
+  position: relative;
+  font-size: 4.5em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  z-index: 1;
+  &::before {
+    @extend %template_tags;
+    content: "<h1>";
+    position: absolute;
+    top: -1em;
+    left: -1em;
+  }
+  &::after {
+    @extend %template_tags;
+    content: "</h1>";
+    position: absolute;
+    bottom: 0;
+    right: -3em;
+  }
+}

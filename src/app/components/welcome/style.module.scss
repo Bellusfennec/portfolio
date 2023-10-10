@@ -1,0 +1,12 @@
+@import "../../styles/main";
+
+.highlight {
+  color: $color_1;
+  &:hover {
+    color: $color_2;
+  }
+}
+.p {
+  color: #8d8d8d;
+  letter-spacing: 4px;
+}

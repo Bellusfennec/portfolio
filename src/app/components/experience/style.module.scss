@@ -1,0 +1,39 @@
+@import "../../styles/main";
+
+.experienceSkill {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+  @media (max-width: 1200px) {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+.experience,
+.skill {
+  width: 50%;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+  // @media (max-width: 991px) {
+  //   width: 100%;
+  //   margin-bottom: 2.5em;
+  // }
+}
+
+.item {
+  font-size: 0.9em;
+  padding-top: 1em;
+  .bar {
+    width: 100%;
+    background: #111; /*#373737; */
+    margin-bottom: 1em;
+  }
+  .barLong {
+    height: 0.15em;
+  }
+  .name {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}
