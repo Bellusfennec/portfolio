@@ -7,7 +7,7 @@ interface IButtonProps {
 const Button = (props: IButtonProps) => {
   const { children } = props;
 
-  return <h1 className={style.buttonFill}>{children}</h1>;
+  return <button className={style.button}>{children}</button>;
 };
 
 export default Button;

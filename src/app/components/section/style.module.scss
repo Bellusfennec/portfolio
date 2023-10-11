@@ -1,19 +1,10 @@
-@import "../../styles/main";
+@import "../../styles/variables";
 
 .section {
   min-height: 100vh;
   scroll-behavior: smooth;
-  padding: 3em;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1200px) {
-    padding: 0;
-  }
-  // @media (max-width: 991px) {
-  //   // padding-bottom: 4.5em;
-  //   flex-direction: column;
-  //   display: block;
-  // }
 }

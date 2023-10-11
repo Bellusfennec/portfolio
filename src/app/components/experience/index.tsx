@@ -2,6 +2,7 @@ import Container from "../container";
 import Section from "../section";
 import TagH2 from "../tags/h2";
 import TagP from "../tags/p";
+import TitleAnimate from "../titleAnimate";
 import style from "./style.module.scss";
 
 const Experience = () => {
@@ -11,19 +12,9 @@ const Experience = () => {
         <div className={style.experienceSkill}>
           <div className={style.experience}>
             <TagH2>
-              <span>О</span>
-              <span>п</span>
-              <span>ы</span>
-              <span>т</span>
+              <TitleAnimate>Опыт</TitleAnimate>
               <br />
-              <span>и</span>
-              &nbsp;
-              <span>Н</span>
-              <span>а</span>
-              <span>в</span>
-              <span>ы</span>
-              <span>к</span>
-              <span>и</span>
+              <TitleAnimate>и Навыки</TitleAnimate>
             </TagH2>
             <br />
             <br />

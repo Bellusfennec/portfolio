@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.portfolio {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  // gap: .5em;
+  margin-bottom: 2em;
+  .portfolio_item {
+    position: relative;
+    flex: 0 0 16.66%;
+    max-width: 16.66%;
+    .portfolio_gallery {
+      position: relative;
+      a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 100%;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          margin: auto;
+          height: auto;
+          max-height: 95%;
+          width: auto;
+          max-width: 95%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          border: 1px solid $color_1;
+          transition: all 0.3s ease;
+          &:hover {
+            transform: scale(1.5);
+            border: 1px solid $color_2;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .portfolio_item {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}

@@ -1,23 +1,23 @@
 @import "../../../styles/variables";
 
-.h2 {
+.tag {
   position: relative;
   font-size: 3.75em;
   user-select: none;
   line-height: 1;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   &::before {
     @extend %template_tags;
-    content: "<h2>";
+    content: "<form>";
     position: absolute;
-    top: -0.75em;
+    top: -1.5em;
     left: -1em;
   }
   &::after {
     @extend %template_tags;
-    content: "</h2>";
+    content: "</form>";
     position: absolute;
-    bottom: -1.25em;
+    bottom: -1.5em;
     left: -1em;
   }
 }

@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.field {
+  font-size: 1.25rem;
+  padding: 1rem;
+  background: $color_3;
+  width: 100%;
+  color: white;
+  resize: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
