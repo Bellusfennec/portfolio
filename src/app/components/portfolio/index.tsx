@@ -6,7 +6,7 @@ import style from "./style.module.scss";
 
 const Portfolio = () => {
   return (
-    <Section>
+    <Section id="portfolio">
       <Container>
         <TagH2>
           <TitleAnimate>Моё портфолио</TitleAnimate>

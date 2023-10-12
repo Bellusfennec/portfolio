@@ -19,9 +19,13 @@ const TitleAnimate = (props: ITitleAnimateProps) => {
 
   Children.map(children, (child): any => {
     if (child && typeof children === "string") {
-      childRef.current = [...child].map((char: any) => {
+      childRef.current = [...child].map((char: any, i) => {
         if (char === " ") return char;
-        return React.createElement("span", { className: style.span }, char);
+        return React.createElement(
+          "span",
+          { className: style.span, key: i },
+          char
+        );
       });
     }
     if (!React.isValidElement(child)) return child;

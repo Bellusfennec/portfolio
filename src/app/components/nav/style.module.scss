@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.link {
+  display: inline-block;
+  padding: 1.5rem 0 1rem 0;
+  margin-right: 3rem;
+  background: $background_1;
+  backdrop-filter: blur(4px);
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.visible {
+  & > .link {
+  }
+}
