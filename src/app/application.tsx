@@ -30,12 +30,12 @@ function App() {
   return (
     <>
       <Welcome observerRef={observerRef} />
-      <Nav isIntersecting={isIntersecting} />
       <Portfolio />
       <Experience />
       <Contact />
       <Footer />
       <ButtonScrollUp isIntersecting={isIntersecting} />
+      <Nav isIntersecting={isIntersecting} />
     </>
   );
 }
