@@ -1,11 +1,33 @@
-import Container from "../container";
-import Section from "../section";
-import TagH2 from "../tags/h2";
-import TagP from "../tags/p";
-import TitleAnimate from "../titleAnimate";
-import style from "./style.module.scss";
+import { useSelector } from 'react-redux'
+import Container from '../container'
+import Section from '../section'
+import TagH2 from '../tags/h2'
+import TagP from '../tags/p'
+import TitleAnimate from '../titleAnimate'
+import style from './style.module.scss'
+import { getCurrentUser } from '../../store/user.slicer'
+import { motion } from 'framer-motion'
+
+interface ISkills {
+  id: number
+  name: string
+  percent: number
+  color: string
+}
 
 const Experience = () => {
+  const currentUser = useSelector(getCurrentUser())
+  const { skills } = currentUser
+
+  const variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.5 },
+    }),
+  }
+
   return (
     <Section id="experience">
       <Container className={style.experienceSkill}>
@@ -18,67 +40,34 @@ const Experience = () => {
           <br />
           <br />
           <TagP>
-            Начал свой путь в качестве веб разработчика более 7 лет назад, я
-            делал сайты для друзей и знакомых, вносил изминения на сайте крупной
-            компании и параллельно много самостоятельно обучался.
+            Начал свой путь в качестве веб разработчика более 3 лет назад, делая сайты для друзей и
+            знакомых, паралельно много совершенствовался.
             <br />
-            <br />Я создаю адаптивные веб-сайты, быстрые, простые в
-            использовании и созданы с учетом лучших практик. Основная область
-            моих знаний - вёрстка, использую HTML, CSS, JS, создание небольших и
-            средних веб-приложений.
+            <br />
+            Сейчас создаю адаптивные веб приложения, быстрые, простые в использовании и с учетом
+            лучших практик. Основная область моих знаний - SPA (single page application), использую
+            ReactJS, NodeJS, для создание небольших и средних веб-приложений.
           </TagP>
         </div>
         <div className={style.skill}>
           <br />
-          <div className={style.item}>
-            <div className={style.name}>HTML</div>
-            <div className={style.bar}>
-              <div
-                className={style.barLong}
-                style={{ width: "90%", background: "#03dac6" }}
-              ></div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.name}>CSS</div>
-            <div className={style.bar}>
-              <div
-                className={style.barLong}
-                style={{ width: "90%", background: "#ff0266" }}
-              ></div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.name}>JavaScript</div>
-            <div className={style.bar}>
-              <div
-                className={style.barLong}
-                style={{ width: "50%", background: "#c402ff" }}
-              ></div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.name}>Node JS</div>
-            <div className={style.bar}>
-              <div
-                className={style.barLong}
-                style={{ width: "20%", background: "#ff0266" }}
-              ></div>
-            </div>
-          </div>
-          <div className={style.item}>
-            <div className={style.name}>MySQL</div>
-            <div className={style.bar}>
-              <div
-                className={style.barLong}
-                style={{ width: "20%", background: "#03dac6" }}
-              ></div>
-            </div>
-          </div>
+          <motion.div initial="hidden" animate="visible" variants={variants}>
+            {skills?.map(({ id, name, percent, color }: ISkills, i: number) => (
+              <motion.div variants={variants} custom={i} key={id} className={style.item}>
+                <div className={style.name}>{name}</div>
+                <div className={style.bar}>
+                  <div
+                    className={style.barLong}
+                    style={{ width: `${percent}%`, background: color }}
+                  ></div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </Container>
     </Section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

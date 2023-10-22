@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "ReactJS", "percent": 80, "color": "#03dac6" },
+  { "id": 2, "name": "Redux", "percent": 80, "color": "#ff0266" },
+  { "id": 3, "name": "NodeJS", "percent": 60, "color": "#c402ff" }
+]
