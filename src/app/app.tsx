@@ -7,6 +7,8 @@ import Nav from './components/nav'
 import Portfolio from './components/portfolio'
 import ButtonScrollUp from './components/buttonScrollUp'
 import AppLoader from './hoc/appLoader'
+import ThemeProvider from '../app/providers/theme.provider'
+import ThemeSetter from './components/theme'
 
 function App() {
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -28,13 +30,16 @@ function App() {
 
   return (
     <AppLoader>
-      <Welcome observerRef={observerRef} />
-      <Portfolio />
-      <Experience />
-      {/* <Contact /> */}
-      <Footer />
-      <ButtonScrollUp isIntersecting={isIntersecting} />
-      <Nav isIntersecting={isIntersecting} />
+      <ThemeProvider>
+        <Welcome observerRef={observerRef} />
+        <Portfolio />
+        <Experience />
+        {/* <Contact /> */}
+        <Footer />
+        <ButtonScrollUp isIntersecting={isIntersecting} />
+        <Nav isIntersecting={isIntersecting} />
+        <ThemeSetter />
+      </ThemeProvider>
     </AppLoader>
   )
 }

@@ -1,23 +1,22 @@
-import style from "./style.module.scss";
+import { MutableRefObject } from 'react'
+import style from './style.module.scss'
 
 interface ISectionProps {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
+  children: React.ReactNode
+  className?: string
+  id?: string
+  ref?: MutableRefObject<null>
 }
 
 const Section = (props: ISectionProps) => {
-  const { children, className } = props;
-  const id = props.id ? props.id : "";
+  const { children, className, ref } = props
+  const id = props.id ? props.id : ''
 
   return (
-    <section
-      id={id}
-      className={style.section + (className ? ` ${className}` : "")}
-    >
+    <section ref={ref} id={id} className={style.section + (className ? ` ${className}` : '')}>
       {children}
     </section>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section
