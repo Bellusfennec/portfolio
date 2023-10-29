@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Welcome from './components/welcome'
-import Footer from './components/footer'
-import Experience from './components/experience'
-import Contact from './components/contact'
-import Nav from './components/nav'
-import Portfolio from './components/portfolio'
-import ButtonScrollUp from './components/buttonScrollUp'
-import AppLoader from './hoc/appLoader'
+import { useEffect, useRef, useState } from 'react'
 import ThemeProvider from '../app/providers/theme.provider'
-import ThemeSetter from './components/theme'
+import ButtonScrollUp from './components/buttonScrollUp'
+import Experience from './components/experience'
+import Footer from './components/footer'
+import Portfolio from './components/portfolio'
+import Sidebar from './components/sidebar'
+import Welcome from './components/welcome'
+import AppLoader from './hoc/appLoader'
 
 function App() {
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -31,14 +29,14 @@ function App() {
   return (
     <AppLoader>
       <ThemeProvider>
+        <Sidebar />
         <Welcome observerRef={observerRef} />
-        <Portfolio />
         <Experience />
+        <Portfolio />
         {/* <Contact /> */}
         <Footer />
         <ButtonScrollUp isIntersecting={isIntersecting} />
-        <Nav isIntersecting={isIntersecting} />
-        <ThemeSetter />
+        {/* <Nav isIntersecting={isIntersecting} /> */}
       </ThemeProvider>
     </AppLoader>
   )

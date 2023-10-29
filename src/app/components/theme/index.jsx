@@ -1,27 +1,26 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../providers/theme.provider'
-import style from './style.module.scss'
+import './style.scss'
 
 function ThemeSetter() {
-  console.log('theme')
   const { theme, setTheme } = useContext(ThemeContext)
+  console.log('theme', theme)
 
   return (
-    <>
-      <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
-        {themeOptions.map((option, idx) => (
-          <option value={option.value} key={idx}>
-            {option.value}
-          </option>
-        ))}
-      </select>
-      <input type="checkbox" id="toggle" className={style.checkbox} />
-      <label htmlFor="toggle" className={style.label}>
-        <span className={style.background}></span>
+    <div className="theme">
+      <input
+        type="checkbox"
+        id="toggle"
+        className="checkbox"
+        value={theme}
+        checked={theme === 'light' ? false : true}
+        onChange={({ target }) => setTheme(target.value === 'light' ? 'dark' : 'light')}
+      />
+      <label htmlFor="toggle" className="label">
+        <span className="background"></span>
       </label>
-    </>
+    </div>
   )
 }
-const themeOptions = [{ value: 'light' }, { value: 'dark' }]
 
 export default ThemeSetter

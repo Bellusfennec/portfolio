@@ -5,11 +5,10 @@ import Section from '../section'
 import TagH1 from '../tags/h1'
 import TagP from '../tags/p'
 import style from './style.module.scss'
-import { motion } from 'framer-motion'
 
 const Welcome = ({ ...rest }) => {
   return (
-    <Section {...rest}>
+    <Section id="home" {...rest}>
       <Container>
         <TagH1>
           Привет,

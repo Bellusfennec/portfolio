@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react'
-import style from './style.module.scss'
+import './style.scss'
 
 interface ISectionProps {
   children: React.ReactNode
@@ -13,7 +13,7 @@ const Section = (props: ISectionProps) => {
   const id = props.id ? props.id : ''
 
   return (
-    <section ref={ref} id={id} className={style.section + (className ? ` ${className}` : '')}>
+    <section ref={ref} id={id} className={'section' + (className ? ` ${className}` : '')}>
       {children}
     </section>
   )

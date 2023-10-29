@@ -1,0 +1,7 @@
+@import "../../styles/variables";
+
+.section {
+  min-height: 100vh;
+  border: 1px white solid;
+  scroll-snap-align: center;
+}
