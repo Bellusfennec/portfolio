@@ -1,0 +1,23 @@
+@import "../../../../styles/variables";
+
+.h2 {
+  position: relative;
+  font-size: 3.75em;
+  user-select: none;
+  line-height: 1;
+  margin: 1rem 0;
+  &::before {
+    @extend %template_tags;
+    content: "<h2>";
+    position: absolute;
+    top: -0.75em;
+    left: -1em;
+  }
+  &::after {
+    @extend %template_tags;
+    content: "</h2>";
+    position: absolute;
+    bottom: -1.25em;
+    left: -1em;
+  }
+}

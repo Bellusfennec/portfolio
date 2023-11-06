@@ -1,0 +1,35 @@
+@import "../../../styles/variables";
+
+.experienceSkill {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+  @media screen and (max-width: 1200px) {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+.experience,
+.skill {
+  width: 50%;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.item {
+  font-size: 0.9em;
+  padding-top: 1em;
+  .bar {
+    width: 100%;
+    background: #111; /*#373737; */
+    margin-bottom: 1em;
+  }
+  .barLong {
+    height: 0.15em;
+  }
+  .name {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}

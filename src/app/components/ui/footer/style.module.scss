@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.footer {
+  border-top: 2px solid #2b2b2b;
+  background: #2b2b2b;
+}
+.note {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .icon {
+    padding: 0 0.3rem;
+    svg {
+      color: $color_2;
+    }
+  }
+  .link {
+    padding-right: 0.3rem;
+  }
+}

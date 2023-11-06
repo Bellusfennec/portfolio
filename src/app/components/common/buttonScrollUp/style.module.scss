@@ -1,0 +1,39 @@
+@import "../../../styles/variables";
+
+.button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  background: none;
+  color: $color_1;
+  border: 2px solid $color_1;
+  font-size: 2rem;
+  font-family: inherit;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.5rem;
+  transition: 0.3s;
+  display: none;
+  opacity: 0;
+  blur &:hover,
+  &:focus {
+    /* background: #25BA66; */
+    transition: 0.3s;
+    border: 2px solid $color_2;
+    color: white;
+    box-shadow: inset 0 0 0 2rem $color_2;
+  }
+}
+.visible {
+  display: block;
+  animation: opacityA 1s forwards;
+}
+@keyframes opacityA {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

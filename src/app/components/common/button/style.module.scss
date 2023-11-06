@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+
+.button {
+  cursor: pointer;
+  background: none;
+  color: white;
+  border: 2px solid $color_1;
+  font-size: 1.25rem;
+  font-family: inherit;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  transition: 0.3s;
+  &:hover,
+  &:focus {
+    /* background: #25BA66; */
+    transition: 0.3s;
+    border: 2px solid $color_2;
+    color: white;
+    box-shadow: inset 0 0 0 2rem $color_2;
+  }
+}

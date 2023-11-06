@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.contactForm {
+  width: 50%;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+.form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}

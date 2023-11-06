@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+.span {
+  display: inline-block;
+  color: $color_1;
+  transition: all 1s ease;
+  &:hover {
+    color: $color_2;
+    transition: all 0s ease;
+    transform: translate3d(0, -10px, 22px);
+  }
+}
