@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+.card {
+  cursor: pointer;
+  width: 100%;
+  padding-top: 100%;
+  background-color: #2b2b2b;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2b2b2b;
+  transition: all 0.3s ease;
+  &:hover {
+    border: 1px solid $color_2;
+  }
+  .info {
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    right: 0;
+    background-color: #2b2b2b;
+    color: white;
+    z-index: 1;
+    padding: 0.5rem;
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  &:hover .info {
+    bottom: 0;
+    opacity: 1;
+  }
+}

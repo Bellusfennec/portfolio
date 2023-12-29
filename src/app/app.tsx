@@ -1,43 +1,28 @@
-import { useEffect, useRef, useState } from 'react'
-import ThemeProvider from '../app/providers/theme.provider'
+import { useState } from 'react'
+// import ThemeProvider from './providers/theme.provider.js'
 import ButtonScrollUp from './components/common/buttonScrollUp'
-import Section from './components/common/section'
 import Experience from './components/ui/experience'
 import Hero from './components/ui/hero'
 import Portfolio from './components/ui/portfolio'
 import Sidebar from './components/ui/sidebar'
 import AppLoader from './hoc/appLoader'
+import Document from './components/ui/document'
+import Contact from './components/ui/contact'
 
 function App() {
-  const [isIntersecting, setIsIntersecting] = useState(false)
-  const observerRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsIntersecting(entry.isIntersecting)
-      },
-      { rootMargin: '-300px' }
-    )
-    if (observerRef.current !== null) {
-      observer.observe(observerRef.current)
-    }
-    return () => observer.disconnect()
-  }, [])
+  const [isIntersectingHero, setIntersectingHero] = useState(false)
 
   return (
     <AppLoader>
-      <ThemeProvider>
-        <Sidebar />
-        <Hero ref={observerRef} />
-        <Section id="experience">
-          <Experience />
-        </Section>
-        <Section id="portfolio">
-          <Portfolio />
-        </Section>
-        <ButtonScrollUp isIntersecting={isIntersecting} />
-      </ThemeProvider>
+      {/* <ThemeProvider> */}
+      <Sidebar />
+      <Hero onIntersected={bool => setIntersectingHero(bool)} />
+      <Experience id="experience" />
+      <Portfolio id="portfolio" />
+      <Document id="document" />
+      <Contact id="contact" />
+      <ButtonScrollUp visible={isIntersectingHero} />
+      {/* </ThemeProvider> */}
     </AppLoader>
   )
 }

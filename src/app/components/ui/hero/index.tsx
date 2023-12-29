@@ -1,14 +1,17 @@
-import React from 'react'
-import Button from '../../common/button'
+import ButtonLink from '../../common/buttonLink'
 import Container from '../../common/container'
-import style from './style.module.scss'
+import Section from '../../common/section'
 import TagH1 from '../../common/tags/h1'
 import TagP from '../../common/tags/p'
-import Section from '../../common/section'
+import style from './style.module.scss'
 
-const Hero = ({ ...rest }) => {
+interface IProps {
+  onIntersected: (arg0: boolean) => void
+}
+
+const Hero = ({ onIntersected }: IProps) => {
   return (
-    <Section id="home" {...rest} className={style.hero}>
+    <Section id="home" onIntersected={onIntersected} className={style.hero}>
       <Container>
         <TagH1>
           Привет,
@@ -17,7 +20,7 @@ const Hero = ({ ...rest }) => {
         </TagH1>
         <TagP className={style.p}>Front End Developer</TagP>
         <br />
-        <Button>Напиши мне!</Button>
+        <ButtonLink to={'#contact'}>Напиши мне!</ButtonLink>
       </Container>
     </Section>
   )

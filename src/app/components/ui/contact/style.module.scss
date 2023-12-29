@@ -1,5 +1,11 @@
 @import "../../../styles/variables";
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contactForm {
   width: 50%;
   @media screen and (max-width: 1200px) {

@@ -1,15 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import skills from '../../mockData/skills.json'
-
-interface ISetUser {
-  firstName: string
-  email: string
-  password: string
-}
+import skillList from '../mock/skill.json'
+import documentList from '../mock/document.json'
+import portfolioList from '../mock/portfolio.json'
 
 export const loadUser = createAsyncThunk('user/load', async (_, { rejectWithValue }) => {
   try {
-    const data = { skills }
+    const data = { skills: skillList, document: documentList, portfolio: portfolioList }
     return data
   } catch (error: any) {
     console.log(error)

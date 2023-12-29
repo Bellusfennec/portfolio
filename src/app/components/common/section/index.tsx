@@ -1,19 +1,37 @@
-import { MutableRefObject } from 'react'
+import { useEffect, useRef } from 'react'
 import './style.scss'
 
 interface ISectionProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   id?: string
-  ref?: MutableRefObject<null>
+  onIntersected?: (arg0: boolean) => void
 }
 
 const Section = (props: ISectionProps) => {
-  const { children, className, ref } = props
-  const id = props.id ? props.id : ''
+  const { children, className, id, onIntersected } = props
+
+  const observerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        onIntersected?.(entry.isIntersecting)
+      },
+      { rootMargin: '-300px' }
+    )
+    if (observerRef.current !== null) {
+      observer.observe(observerRef.current)
+    }
+    return () => observer.disconnect()
+  }, [onIntersected])
 
   return (
-    <section ref={ref} id={id} className={'section' + (className ? ` ${className}` : '')}>
+    <section
+      ref={observerRef}
+      id={id || ''}
+      className={'section' + (className ? ` ${className}` : '')}
+    >
       {children}
     </section>
   )

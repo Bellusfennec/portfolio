@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const localTheme = localStorage.getItem('globalTheme')
-const initialTheme = localTheme === 'light' && localTheme === 'dark' ? true : false
+const initialTheme = localTheme === 'light' || localTheme === 'dark' ? true : false
 const initialThemeState = { theme: initialTheme ? localTheme : 'light', setTheme: () => null }
 
 export const ThemeContext = React.createContext(initialThemeState)
@@ -19,7 +19,7 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`theme--${theme}`}>{children}</div>
+      <div className={`theme-${theme}`}>{children}</div>
     </ThemeContext.Provider>
   )
 }

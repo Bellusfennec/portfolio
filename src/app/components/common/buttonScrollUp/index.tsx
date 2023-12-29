@@ -1,29 +1,29 @@
-import style from "./style.module.scss";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import style from './style.module.scss'
+import { AiOutlineArrowUp } from 'react-icons/ai'
 
 interface IButtonScrollUpProps {
-  isIntersecting?: boolean;
+  visible?: boolean
 }
 
 const ButtonScrollUp = (props: IButtonScrollUpProps) => {
-  const { isIntersecting } = props;
+  const { visible } = props
 
   const handlerScrollUp = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <button
       onClick={handlerScrollUp}
-      className={style.button + (!isIntersecting ? ` ${style.visible}` : "")}
+      className={style.button + (!visible ? ` ${style.visible}` : '')}
     >
       <AiOutlineArrowUp />
     </button>
-  );
-};
+  )
+}
 
-export default ButtonScrollUp;
+export default ButtonScrollUp

@@ -4,7 +4,7 @@ import './style.scss'
 
 function ToggleTheme() {
   const { theme, setTheme } = useContext(ThemeContext)
-  console.log('theme', theme)
+  // console.log('theme', theme)
 
   return (
     <div className="theme">

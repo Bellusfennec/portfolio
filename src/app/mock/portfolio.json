@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "portfolio-1.PNG",
+    "name": "Горизонатльный слайдер",
+    "text": "Красивый слайдер с плавным эффектом расскрития и сворачивания. При выборе картинки, плавно раскрывается, сворачивая предыдущую картинку, так же как и остальные. Реализовано на javascript + CSS и HTML",
+    "demoLink": "https://bellusfennec.github.io/pet-cards-slider/",
+    "codeLink": "https://github.com/Bellusfennec/pet-cards-slider"
+  },
+  {
+    "id": 2,
+    "image": "portfolio-2.PNG",
+    "name": "Перетаскивание элемента",
+    "text": "Простая реализация drag-and-drop. Можно перетаскивать мышкой между тремя колонками. При наведении на колонку подсказывает примерное место прерывистой линией. Реализовано на javascript + CSS и HTML",
+    "demoLink": "https://bellusfennec.github.io/pet-drag-n-drop/",
+    "codeLink": "https://github.com/Bellusfennec/pet-drag-n-drop"
+  },
+  {
+    "id": 3,
+    "image": "portfolio-3.PNG",
+    "name": "Вертикальный слайдер",
+    "text": "Красочный слайдер с эффектом перелистывания. Во время смены слайда в обратном направлении сменяется название слайда на фоне подходящим к слайду. Реализовано на javascript + CSS и HTML.",
+    "demoLink": "https://bellusfennec.github.io/pet-slider-classic/",
+    "codeLink": "https://github.com/Bellusfennec/pet-slider-classic"
+  },
+  {
+    "id": 4,
+    "image": "portfolio-4.PNG",
+    "name": "Цветная доска",
+    "text": "Магическая доска, которая состоит из мелких квадратов, при задевании подсвечиваются случайным цветом. Выглядит впечатляюще и эффектно. Реализовано на javascript + CSS и HTML",
+    "demoLink": "https://bellusfennec.github.io/pet-color-board/",
+    "codeLink": "https://github.com/Bellusfennec/pet-color-board"
+  },
+  {
+    "id": 5,
+    "image": "portfolio-5.PNG",
+    "name": "Игра Aim",
+    "text": "Игра на точность. Цель игры набрать как можно больше очков попадая мышкой по случайно появляющимся точкам. В начале нужно выбрать время игры, в течении которой будет появляться точки, разных цветом и размеров. В конце будет итоговый счет. Реализовано на javascript + CSS и HTML",
+    "demoLink": "https://bellusfennec.github.io/pet-aim-game/",
+    "codeLink": "https://github.com/Bellusfennec/pet-aim-game"
+  }
+]

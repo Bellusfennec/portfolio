@@ -5,12 +5,13 @@ const MenuLinks = () => {
     { id: 'home', name: 'Главная' },
     { id: 'experience', name: 'Мой опыт' },
     { id: 'portfolio', name: 'Портфолио' },
+    { id: 'document', name: 'Документы' },
     { id: 'contact', name: 'Контакты' },
   ]
   const variants = {
     open: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
     closed: {

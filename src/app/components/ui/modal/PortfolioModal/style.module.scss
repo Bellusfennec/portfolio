@@ -1,0 +1,17 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  min-width: 500px;
+  min-height: 250px;
+  max-width: 500px;
+  max-height: 500px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

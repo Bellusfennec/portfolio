@@ -3,7 +3,7 @@ import MenuLinks from './menuLinks'
 import './style.scss'
 import ToggleButton from './toggleButton'
 import { motion } from 'framer-motion'
-import ToggleTheme from '../../common/toggleTheme'
+// import ToggleTheme from '../../common/toggleTheme'
 
 const Sidebar = () => {
   const [isOpen, setOpen] = useState(false)
@@ -28,11 +28,9 @@ const Sidebar = () => {
   }
   return (
     <motion.div className="sidebar" animate={isOpen ? 'open' : 'closed'}>
-      <motion.div className="bg" variants={variants}>
+      <motion.div className="bg myClass" variants={variants}>
         <MenuLinks />
-        <div className="theme">
-          <ToggleTheme />
-        </div>
+        <div className="theme">{/* <ToggleTheme /> */}</div>
       </motion.div>
       <ToggleButton setOpen={setOpen} />
     </motion.div>
