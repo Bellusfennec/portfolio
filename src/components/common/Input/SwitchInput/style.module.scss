@@ -1,0 +1,49 @@
+.container {
+  font-size: 1rem;
+}
+
+.input {
+  visibility: hidden;
+}
+
+.toggle {
+  cursor: pointer;
+  width: 3.4375em;
+  height: 1.875em;
+  background: transparent;
+  border-radius: 6.25em;
+  position: relative;
+  border: 0.0625em solid var(--color-black-500);
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 0.33s;
+}
+
+.toggle:after {
+  content: "";
+  background: var(--color-black-000);
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  border: 0.0625em solid var(--color-black-500);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.25em;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 0.33s;
+}
+
+.input:checked + .toggle {
+  background: var(--color-primary-900);
+}
+
+.input:checked + .toggle:after {
+  left: calc(100% - 0.25em);
+  transform: translate(-100%, -50%);
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 0.33s !important;
+  transition-delay: 0 !important;
+}
